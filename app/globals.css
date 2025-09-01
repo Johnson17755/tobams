@@ -14,10 +14,15 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ededed;
+    --foreground: #0a0a0a;
   }
 }
+
+/* .dark {
+  --background: #222327; 
+  --foreground: #ededed; 
+} */
 
 body {
   background: var(--background);
