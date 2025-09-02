@@ -21,7 +21,7 @@ export function DashboardHeader() {
       <div className="bg-card border-border px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
-            <h1 className="text-xl font-semibold text-black dark:text-white">
+            <h1 className="text-xl font-semibold text-black">
               Welcome back, Vincent 👋
             </h1>
           </div>
