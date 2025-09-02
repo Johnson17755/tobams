@@ -27,7 +27,7 @@ export function NavigationBar({ activeNavItem, onNavClick }) {
   ];
 
   return (
-    <div className="w-16 bg-slate-900 dark:bg-slate-950 flex flex-col items-center py-4 space-y-2">
+    <div className="w-16 bg-[#1C1D22] dark:bg-slate-950 flex flex-col items-center py-4 space-y-2">
       {/* Logo/Brand */}
       {/* <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center mb-4">
         <div className="w-4 h-4 bg-slate-900 rounded-sm"></div>
@@ -39,8 +39,8 @@ export function NavigationBar({ activeNavItem, onNavClick }) {
           const Icon = item.icon;
           return (
             <button
-              key={item.label} // ✅ unique key
-              onClick={() => onNavClick(item.label)} // ✅ use label instead of id
+              key={item.label}
+              onClick={() => onNavClick(item.label)}
               className={cn(
                 "w-10 h-10 rounded-lg flex items-center justify-center transition-colors",
                 activeNavItem === item.label

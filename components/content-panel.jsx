@@ -23,15 +23,15 @@ export function ContentPanel({
 
   return (
     <div
-      className="w-64 bg-card border-r border-border flex flex-col md:w-64 sm:w-56 xs:w-48"
+      className="w-64 bg-card border-r-2 border-[#1C1D2280] border-border flex flex-col md:w-64 sm:w-56 xs:w-48"
       style={{
-        backgroundColor: theme === "dark" ? "#334155" : "#f8fafc",
+        backgroundColor: theme === "dark" ? "#24262C" : "#FFFFFF",
         borderColor: theme === "dark" ? "#475569" : "#e2e8f0",
         color: theme === "dark" ? "#f1f5f9" : "#334155",
       }}
     >
       {/* Header */}
-      <div className="p-4 border-b border-border">
+      <div className="p-4 border-b-2 border-border border-[#1C1D2280]">
         <div className="flex items-center justify-between">
           <h1 className="text-lg font-semibold text-foreground">Projects</h1>
           <Button
@@ -118,7 +118,6 @@ export function ContentPanel({
         </div>
       </div>
 
-      {/* ✅ Theme Toggle controlled by context */}
       <ThemeToggle theme={theme} onToggle={toggleTheme} />
     </div>
   );

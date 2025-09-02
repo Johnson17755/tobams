@@ -27,16 +27,16 @@ export function Sidebar({ className }) {
   };
 
   const handleProjectClick = (projectName) => {
-    console.log("[v0] Project clicked:", projectName);
+    projectName;
   };
 
   const handleTaskClick = (taskType) => {
-    console.log("[v0] Task clicked:", taskType);
+    taskType;
   };
 
   const handleNavClick = (navItem) => {
     setActiveNavItem(navItem);
-    console.log("[v0] Navigation clicked:", navItem);
+    navItem;
   };
 
   return (

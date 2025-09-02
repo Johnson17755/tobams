@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/button";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/avatar";
+import { Avatar, AvatarFallback } from "@/components/avatar";
 import { Plus } from "lucide-react";
 import Image from "next/image";
 import profile from "@/public/profile.svg";
@@ -9,7 +9,6 @@ import profile from "@/public/profile.svg";
 import {
   Search,
   Bell,
-  Filter,
   MoreHorizontal,
   Calendar,
   StretchHorizontal,
@@ -22,7 +21,7 @@ export function DashboardHeader() {
       <div className="bg-card border-border px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
-            <h1 className="text-xl font-semibold text-foreground">
+            <h1 className="text-xl font-semibold text-black dark:text-white">
               Welcome back, Vincent 👋
             </h1>
           </div>
