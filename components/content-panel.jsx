@@ -19,8 +19,6 @@ export function ContentPanel({
   const [teamExpanded, setTeamExpanded] = useState(false);
   const [remindersExpanded, setRemindersExpanded] = useState(false);
   const [messengersExpanded, setMessengersExpanded] = useState(false);
-
-  // ✅ use only theme from context
   const { theme, toggleTheme } = useTheme();
 
   return (
@@ -42,7 +40,7 @@ export function ContentPanel({
             className="h-6 w-6 p-0 text-foreground hover:bg-accent"
             onClick={onAddProject}
           >
-            <Plus className="h-4 w-4" />
+            <Plus className="h-4 w-4 border rounded-2xl bg-[#1C1D2280] text-[#1C1D2280]" />
           </Button>
         </div>
       </div>

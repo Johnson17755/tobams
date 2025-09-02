@@ -139,7 +139,10 @@ function FloatingCubes({ completedTasks }) {
 }
 
 export function TaskProgress3D({ completedTasks, totalTasks }) {
-  console.log("[v0] TaskProgress3D props:", { completedTasks, totalTasks });
+  {
+    completedTasks, totalTasks;
+  }
+  // console.log("[v0] TaskProgress3D props:", { completedTasks, totalTasks });
 
   return (
     <div className="w-full h-64 bg-gradient-to-b from-blue-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-lg overflow-hidden">

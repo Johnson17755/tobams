@@ -2,7 +2,18 @@
 
 import { Button } from "@/components/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/avatar";
-import { Search, Bell, Filter, MoreHorizontal, Calendar } from "lucide-react";
+import { Plus } from "lucide-react";
+import Image from "next/image";
+import profile from "@/public/profile.svg";
+// import { Input } from "@/components/input";
+import {
+  Search,
+  Bell,
+  Filter,
+  MoreHorizontal,
+  Calendar,
+  StretchHorizontal,
+} from "lucide-react";
 
 export function DashboardHeader() {
   return (
@@ -26,9 +37,10 @@ export function DashboardHeader() {
             <span>
               <Calendar className="w-5 h-5" />
             </span>
-            <span className="text-sm text-muted-foreground">19 May 2022</span>
+            <span className="text-sm text-[#1C1D2280]">19 May 2022</span>
             <Avatar className="w-8 h-8">
-              <AvatarImage src="/placeholder.svg?height=32&width=32" />
+              {/* <AvatarImage src="/placeholder.svg?height=32&width=32" /> */}
+              <Image src={profile} alt="profile" />
               <AvatarFallback>VN</AvatarFallback>
             </Avatar>
           </div>
@@ -36,30 +48,38 @@ export function DashboardHeader() {
       </div>
 
       {/* Navigation */}
-      <div className="bg-card border-b border-border px-6 py-3">
+      <div className="bg-card border-b-2 border-border border-[#1C1D2280] px-6 py-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-6">
-            <Button variant="ghost" className="text-sm font-medium">
+            <Button variant="ghost" className="text-sm font-bold gap-2">
+              <StretchHorizontal className="w-4 h-4" />
               Board view
             </Button>
-            <Button variant="ghost" className="text-sm text-muted-foreground">
-              + Add view
+            <Button
+              variant="ghost"
+              className="text-sm text-muted-foreground gap-2 font-bold text-[#1C1D2280]"
+            >
+              <Plus className="w-4 h-4 border rounded-3xl bg-[#1C1D2280]" />
+              Add view
             </Button>
           </div>
           <div className="flex items-center space-x-4">
-            <Button variant="ghost" size="sm">
-              <Filter className="w-4 h-4 mr-2" />
+            <Button variant="ghost" size="sm" className="font-bold text-black ">
               Filter
             </Button>
-            <Button variant="ghost" size="sm">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="font-bold text-[#1C1D2280]"
+            >
               Sort
             </Button>
             <Button variant="ghost" size="sm">
-              <MoreHorizontal className="w-4 h-4" />
+              <MoreHorizontal className="w-4 h-4 border border-[#1C1D2280] rounded-2xl" />
             </Button>
             <Button
               size="sm"
-              className="bg-primary text-primary-foreground hover:bg-primary/90"
+              className="bg-[#1C1D22] text-white hover:bg-primary/90 border border-[#1C1D22] rounded-2xl"
             >
               New template
             </Button>

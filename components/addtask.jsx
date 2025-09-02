@@ -2,8 +2,13 @@
 
 import { Button } from "@/components/button";
 import { Card, CardContent, CardHeader } from "@/components/card";
-import { Avatar, AvatarFallback } from "@/components/avatar"; //savatar
-import { MoreHorizontal, MessageCircle, Eye } from "lucide-react";
+import { Avatar, AvatarFallback } from "@/components/avatar";
+import {
+  MoreHorizontal,
+  MessageSquareText,
+  Paperclip,
+  List,
+} from "lucide-react";
 
 export function TaskCard({ task }) {
   const getProgressColor = (progress, maxProgress) => {
@@ -23,19 +28,23 @@ export function TaskCard({ task }) {
           <Button
             variant="ghost"
             size="sm"
-            className="border p-2 border-[rgba(28,29,34,0.08)] rounded-2xl"
+            className="border border-[rgba(28,29,34,0.08)] p-2.5 rounded-2xl"
           >
             <MoreHorizontal className="w-3 h-3" />
           </Button>
         </div>
-        <p className="text-xs text-[rgba(28,29,34,0.05)] text-muted-foreground">
+        <p className="text-xs text-[#1C1D2280] text-muted-foreground">
           {task.description}
         </p>
       </CardHeader>
       <CardContent className="pt-0">
         <div className="space-y-3">
           <div className="flex items-center justify-between text-xs">
-            <span className="text-card-foreground">Progress</span>
+            <span className="flex items-center gap-1 text-card-foreground text-[#1C1D2280] font-bold">
+              <List className="w-3 h-3" />
+              Progress
+            </span>
+
             <span className="text-card-foreground">
               {task.progress}/{task.maxProgress}
             </span>
@@ -57,10 +66,11 @@ export function TaskCard({ task }) {
           </div>
           <div className="flex items-center justify-between">
             <span className="text-xs text-muted-foreground">{task.date}</span>
+            {/* border rounded bg-[#888DA71A] p-2 */}
             <div className="flex items-center space-x-2">
               {task.comments > 0 && (
                 <div className="flex items-center space-x-1">
-                  <MessageCircle className="w-3 h-3 text-muted-foreground" />
+                  <MessageSquareText className="w-3 h-3 text-muted-foreground" />
                   <span className="text-xs text-muted-foreground">
                     {task.comments}
                   </span>
@@ -68,7 +78,7 @@ export function TaskCard({ task }) {
               )}
               {task.views > 0 && (
                 <div className="flex items-center space-x-1">
-                  <Eye className="w-3 h-3 text-muted-foreground" />
+                  <Paperclip className="w-3 h-3 text-muted-foreground" />
                   <span className="text-xs text-muted-foreground">
                     {task.views}
                   </span>

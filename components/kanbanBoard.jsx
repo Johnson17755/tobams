@@ -187,7 +187,7 @@ export function KanbanBoard() {
 
       <div className="flex flex-1">
         {/* 3D Progress Visualization */}
-        <div className="w-60 bg-card border-r border-border p-6">
+        <div className="w-60 bg-card border-r-2 border-[#1C1D2280] border-border p-6">
           <h3 className="text-lg font-semibold mb-4 text-foreground">
             Task Progress
           </h3>
@@ -208,9 +208,9 @@ export function KanbanBoard() {
         {/* Kanban Columns */}
         <div className="flex-1 p-6 ">
           <div className="grid grid-cols-3 gap-3 h-full">
-            <div className="flex flex-col border-2 p-1 rounded-2xl border-dashed border-border border-[rgba(28,29,34,0.08)]">
+            <div className="flex flex-col border-2 p-3 rounded-2xl border-dashed border-border border-[rgba(28,29,34,0.08)]">
               <KanbanColumn
-                title={<span className="text-sm font-medium">To do</span>}
+                title={<span className="text-xs">To do</span>}
                 tasks={getTasksByStatus("todo")}
                 status="todo"
                 isAddingTask={activeColumn === "todo"}
@@ -219,9 +219,9 @@ export function KanbanBoard() {
                 onCancelAdd={() => setActiveColumn(null)}
               />
             </div>
-            <div className="flex flex-col border-2 p-1 rounded-2xl border-dashed border-border border-[rgba(28,29,34,0.08)]">
+            <div className="flex flex-col border-2 p-3 rounded-2xl border-dashed border-border border-[rgba(28,29,34,0.08)]">
               <KanbanColumn
-                title={<span className="text-sm font-medium">In progress</span>}
+                title={<span className="text-xs">In progress</span>}
                 tasks={getTasksByStatus("inprogress")}
                 status="inprogress"
                 isAddingTask={activeColumn === "inprogress"}
@@ -230,9 +230,9 @@ export function KanbanBoard() {
                 onCancelAdd={() => setActiveColumn(null)}
               />
             </div>
-            <div className="flex flex-col border-2 p-1 rounded-2xl border-dashed border-border border-[rgba(28,29,34,0.08)]">
+            <div className="flex flex-col border-2 p-3 rounded-2xl border-dashed border-border border-[rgba(28,29,34,0.08)]">
               <KanbanColumn
-                title={<span className="text-sm font-medium">Done</span>}
+                title={<span className="text-xs">Done</span>}
                 tasks={getTasksByStatus("done")}
                 status="done"
                 isAddingTask={activeColumn === "done"}
