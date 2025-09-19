@@ -21,26 +21,42 @@ export function ContentPanel({
   const [messengersExpanded, setMessengersExpanded] = useState(false);
   const { theme, toggleTheme } = useTheme();
 
+  const textColor = theme === "dark" ? "#ffffff" : "#334155";
+  const backgroundColor = theme === "dark" ? "#222327" : "#FFFFFF";
+  const borderColor = theme === "dark" ? "#475569" : "#e2e8f0";
+
   return (
     <div
       className="w-64 bg-card border-r-2 border-[#1C1D2280] border-border flex flex-col md:w-64 sm:w-56 xs:w-48"
       style={{
-        backgroundColor: theme === "dark" ? "#24262C" : "#FFFFFF",
-        borderColor: theme === "dark" ? "#475569" : "#e2e8f0",
-        color: theme === "dark" ? "#f1f5f9" : "#334155",
+        backgroundColor,
+        borderColor,
+        color: textColor,
       }}
     >
       {/* Header */}
-      <div className="p-4 border-b-2 border-border border-[#1C1D2280]">
+      <div
+        className="p-4 border-b-2 border-border border-[#1C1D2280]"
+        style={{ borderColor }}
+      >
         <div className="flex items-center justify-between">
-          <h1 className="text-lg font-semibold text-foreground">Projects</h1>
+          <h1 className="text-lg font-semibold" style={{ color: textColor }}>
+            Projects
+          </h1>
           <Button
             variant="ghost"
             size="sm"
-            className="h-6 w-6 p-0 text-foreground hover:bg-accent"
+            className="h-6 w-6 p-0 hover:bg-accent"
             onClick={onAddProject}
+            style={{ color: textColor }}
           >
-            <Plus className="h-4 w-4 border rounded-2xl bg-[#1C1D2280] text-[#1C1D2280]" />
+            <Plus
+              className="h-4 w-4 border rounded-2xl bg-[#1C1D2280]"
+              style={{
+                color: textColor,
+                backgroundColor: theme === "dark" ? "#374151" : "#1C1D2280",
+              }}
+            />
           </Button>
         </div>
       </div>
@@ -49,72 +65,83 @@ export function ContentPanel({
       <div className="flex-1 overflow-y-auto">
         <div className="p-2 space-y-1">
           {/* Team */}
-          <ExpandableSection
-            title="Team"
-            isExpanded={teamExpanded}
-            onToggle={() => setTeamExpanded(!teamExpanded)}
-          >
-            <SectionItem>Team members (5)</SectionItem>
-            <SectionItem>Permissions</SectionItem>
-          </ExpandableSection>
+          <div style={{ color: textColor }}>
+            <ExpandableSection
+              title="Team"
+              isExpanded={teamExpanded}
+              onToggle={() => setTeamExpanded(!teamExpanded)}
+            >
+              <SectionItem>Team members (5)</SectionItem>
+              <SectionItem>Permissions</SectionItem>
+            </ExpandableSection>
+          </div>
 
           {/* Projects Section */}
-          <ExpandableSection
-            title="Projects"
-            isExpanded={projectsExpanded}
-            onToggle={() => setProjectsExpanded(!projectsExpanded)}
-            variant="bold"
-          >
-            <SectionItem onClick={() => onProjectClick("All projects")}>
-              All projects ({projects.length})
-            </SectionItem>
-            {projects.map((project, index) => (
-              <SectionItem key={index} onClick={() => onProjectClick(project)}>
-                {project}
+          <div style={{ color: textColor }}>
+            <ExpandableSection
+              title="Projects"
+              isExpanded={projectsExpanded}
+              onToggle={() => setProjectsExpanded(!projectsExpanded)}
+            >
+              <SectionItem onClick={() => onProjectClick("All projects")}>
+                All projects ({projects.length})
               </SectionItem>
-            ))}
-          </ExpandableSection>
+              {projects.map((project, index) => (
+                <SectionItem
+                  key={index}
+                  onClick={() => onProjectClick(project)}
+                >
+                  {project}
+                </SectionItem>
+              ))}
+            </ExpandableSection>
+          </div>
 
           {/* Tasks Section */}
-          <ExpandableSection
-            title="Tasks"
-            isExpanded={tasksExpanded}
-            onToggle={() => setTasksExpanded(!tasksExpanded)}
-            variant="bold"
-          >
-            <SectionItem onClick={() => onTaskClick("All tasks")}>
-              All tasks (11)
-            </SectionItem>
-            <SectionItem onClick={() => onTaskClick("To do")}>
-              To do (4)
-            </SectionItem>
-            <SectionItem onClick={() => onTaskClick("In progress")}>
-              In progress (4)
-            </SectionItem>
-            <SectionItem onClick={() => onTaskClick("Done")}>
-              Done (3)
-            </SectionItem>
-          </ExpandableSection>
+          <div style={{ color: textColor }}>
+            <ExpandableSection
+              title="Tasks"
+              isExpanded={tasksExpanded}
+              onToggle={() => setTasksExpanded(!tasksExpanded)}
+            >
+              <SectionItem onClick={() => onTaskClick("All tasks")}>
+                All tasks (11)
+              </SectionItem>
+              <SectionItem onClick={() => onTaskClick("To do")}>
+                To do (4)
+              </SectionItem>
+              <SectionItem onClick={() => onTaskClick("In progress")}>
+                In progress (4)
+              </SectionItem>
+              <SectionItem onClick={() => onTaskClick("Done")}>
+                Done (3)
+              </SectionItem>
+            </ExpandableSection>
+          </div>
 
           {/* Reminders */}
-          <ExpandableSection
-            title="Reminders"
-            isExpanded={remindersExpanded}
-            onToggle={() => setRemindersExpanded(!remindersExpanded)}
-          >
-            <SectionItem>Today (2)</SectionItem>
-            <SectionItem>This week (5)</SectionItem>
-          </ExpandableSection>
+          <div style={{ color: textColor }}>
+            <ExpandableSection
+              title="Reminders"
+              isExpanded={remindersExpanded}
+              onToggle={() => setRemindersExpanded(!remindersExpanded)}
+            >
+              <SectionItem>Today (2)</SectionItem>
+              <SectionItem>This week (5)</SectionItem>
+            </ExpandableSection>
+          </div>
 
           {/* Messengers */}
-          <ExpandableSection
-            title="Messengers"
-            isExpanded={messengersExpanded}
-            onToggle={() => setMessengersExpanded(!messengersExpanded)}
-          >
-            <SectionItem>Slack (3)</SectionItem>
-            <SectionItem>Teams (1)</SectionItem>
-          </ExpandableSection>
+          <div style={{ color: textColor }}>
+            <ExpandableSection
+              title="Messengers"
+              isExpanded={messengersExpanded}
+              onToggle={() => setMessengersExpanded(!messengersExpanded)}
+            >
+              <SectionItem>Slack (3)</SectionItem>
+              <SectionItem>Teams (1)</SectionItem>
+            </ExpandableSection>
+          </div>
         </div>
       </div>
 

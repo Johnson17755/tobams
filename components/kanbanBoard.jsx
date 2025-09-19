@@ -187,10 +187,8 @@ export function KanbanBoard() {
 
       <div className="flex flex-1">
         {/* 3D Progress Visualization */}
-        <div className="w-60 bg-card border-r-2 border-[#1C1D2280] border-border p-6">
-          <h3 className="text-lg font-semibold mb-4 text-foreground">
-            Task Progress
-          </h3>
+        <div className="w-60 bg-card border-r-2  border-border p-6">
+          <h3 className="text-lg font-semibold mb-4">Task Progress</h3>
           <div className="mb-4">
             <TaskProgress3D
               completedTasks={completedTasks}

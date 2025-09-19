@@ -21,9 +21,7 @@ export function DashboardHeader() {
       <div className="bg-card border-border px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
-            <h1 className="text-xl font-semibold text-black">
-              Welcome back, Vincent 👋
-            </h1>
+            <h1 className="text-xl font-semibold ">Welcome back, Vincent 👋</h1>
           </div>
           <div className="flex items-center space-x-4">
             <div className="relative p-3">
@@ -47,7 +45,7 @@ export function DashboardHeader() {
       </div>
 
       {/* Navigation */}
-      <div className="bg-card border-b-2 border-border border-[#1C1D2280] px-6 py-3">
+      <div className="bg-card border-b-2 border-border px-6 py-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-6">
             <Button variant="ghost" className="text-sm font-bold gap-2">
@@ -56,29 +54,25 @@ export function DashboardHeader() {
             </Button>
             <Button
               variant="ghost"
-              className="text-sm text-muted-foreground gap-2 font-bold text-[#1C1D2280]"
+              className="text-sm text-muted-foreground gap-2 font-bold"
             >
-              <Plus className="w-4 h-4 border rounded-3xl bg-[#1C1D2280]" />
+              <Plus className="w-4 h-4 border rounded-3xl" />
               Add view
             </Button>
           </div>
           <div className="flex items-center space-x-4">
-            <Button variant="ghost" size="sm" className="font-bold text-black ">
+            <Button variant="ghost" size="sm" className="font-bold">
               Filter
             </Button>
-            <Button
-              variant="ghost"
-              size="sm"
-              className="font-bold text-[#1C1D2280]"
-            >
+            <Button variant="ghost" size="sm" className="font-bold">
               Sort
             </Button>
             <Button variant="ghost" size="sm">
-              <MoreHorizontal className="w-4 h-4 border border-[#1C1D2280] rounded-2xl" />
+              <MoreHorizontal className="w-4 h-4 border rounded-2xl" />
             </Button>
             <Button
               size="sm"
-              className="bg-[#1C1D22] text-white hover:bg-primary/90 border border-[#1C1D22] rounded-2xl"
+              className="bg-[#4B69FF] text-white hover:bg-primary/90 border border-[#1C1D22] rounded-2xl"
             >
               New template
             </Button>
