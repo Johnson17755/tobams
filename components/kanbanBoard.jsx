@@ -5,6 +5,7 @@ import { DashboardHeader } from "./dashboard-header";
 import { KanbanColumn } from "./kanban-col";
 import { TaskProgress3D } from "./taskprogress";
 import { useTheme } from "./toggle";
+
 const initialTasks = [
   {
     id: "1",
@@ -206,7 +207,7 @@ export function KanbanBoard() {
         {/* Kanban Columns */}
         <div className="flex-1 p-6 ">
           <div className="grid grid-cols-3 gap-3 h-full">
-            <div className="flex flex-col border-2 p-3 rounded-2xl border-dashed border-border border-[rgba(28,29,34,0.08)]">
+            <div className="flex flex-col border-2 p-3 rounded-2xl border-dashed border-border border-[#1C1D2214]">
               <KanbanColumn
                 title={<span className="text-xs">To do</span>}
                 tasks={getTasksByStatus("todo")}
@@ -217,7 +218,7 @@ export function KanbanBoard() {
                 onCancelAdd={() => setActiveColumn(null)}
               />
             </div>
-            <div className="flex flex-col border-2 p-3 rounded-2xl border-dashed border-border border-[rgba(28,29,34,0.08)]">
+            <div className="flex flex-col border-2 p-3 rounded-2xl border-dashed border-border border-[#1C1D2214]">
               <KanbanColumn
                 title={<span className="text-xs">In progress</span>}
                 tasks={getTasksByStatus("inprogress")}
@@ -228,7 +229,7 @@ export function KanbanBoard() {
                 onCancelAdd={() => setActiveColumn(null)}
               />
             </div>
-            <div className="flex flex-col border-2 p-3 rounded-2xl border-dashed border-border border-[rgba(28,29,34,0.08)]">
+            <div className="flex flex-col border-2 p-3 rounded-2xl border-dashed border-border border-[#1C1D2214]">
               <KanbanColumn
                 title={<span className="text-xs">Done</span>}
                 tasks={getTasksByStatus("done")}

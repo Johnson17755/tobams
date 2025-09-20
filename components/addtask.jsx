@@ -33,14 +33,12 @@ export function TaskCard({ task }) {
             <MoreHorizontal className="w-3 h-3" />
           </Button>
         </div>
-        <p className="text-xs text-[#1C1D2280] text-muted-foreground">
-          {task.description}
-        </p>
+        <p className="text-xs">{task.description}</p>
       </CardHeader>
       <CardContent className="pt-0">
         <div className="space-y-3">
           <div className="flex items-center justify-between text-xs">
-            <span className="flex items-center gap-1 text-card-foreground text-[#1C1D2280] font-bold">
+            <span className="flex items-center gap-1 text-card-foreground font-bold">
               <List className="w-3 h-3" />
               Progress
             </span>
