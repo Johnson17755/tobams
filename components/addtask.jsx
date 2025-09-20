@@ -25,12 +25,8 @@ export function TaskCard({ task }) {
           <h3 className="font-bold text-xs text-card-foreground">
             {task.title}
           </h3>
-          <Button
-            variant="ghost"
-            size="sm"
-            className="border border-[rgba(28,29,34,0.08)] p-2.5 rounded-2xl"
-          >
-            <MoreHorizontal className="w-3 h-3" />
+          <Button variant="ghost" size="sm" className="p-2">
+            <MoreHorizontal className="w-4 h-4 border rounded-4xl " />
           </Button>
         </div>
         <p className="text-xs">{task.description}</p>

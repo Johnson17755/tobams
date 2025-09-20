@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/button";
-import { Avatar, AvatarFallback } from "@/components/avatar";
+import { Avatar } from "@/components/avatar";
 import { Plus } from "lucide-react";
 import Image from "next/image";
 import profile from "@/public/profile.svg";
@@ -36,9 +36,7 @@ export function DashboardHeader() {
             </span>
             <span className="text-sm text-[#1C1D2280]">19 May 2022</span>
             <Avatar className="w-8 h-8">
-              {/* <AvatarImage src="/placeholder.svg?height=32&width=32" /> */}
               <Image src={profile} alt="profile" />
-              <AvatarFallback>VN</AvatarFallback>
             </Avatar>
           </div>
         </div>

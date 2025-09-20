@@ -63,9 +63,9 @@ export function ThemeToggle() {
       }}
     >
       <div
-        className="flex items-center justify-center space-x-1 rounded-lg p-1 transition-colors duration-200"
+        className="flex items-center bg- justify-center space-x-1 rounded-lg p-1 transition-colors duration-200"
         style={{
-          backgroundColor: theme === "dark" ? "#334155" : "#f1f5f9",
+          backgroundColor: theme === "dark" ? "#222327" : "#f1f5f9",
         }}
       >
         {/* Light Button */}
