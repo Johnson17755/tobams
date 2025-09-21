@@ -33,17 +33,22 @@ export function TaskCard({ task }) {
       </CardHeader>
       <CardContent className="pt-0">
         <div className="space-y-3">
+          {/* Progress header */}
           <div className="flex items-center justify-between text-xs">
             <span className="flex items-center gap-1 text-card-foreground font-bold">
               <List className="w-3 h-3" />
               Progress
             </span>
-
             <span className="text-card-foreground">
               {task.progress}/{task.maxProgress}
             </span>
           </div>
-          <div className="w-full bg-muted rounded-full h-2">
+
+          {/* Progress bar */}
+          <div
+            className="w-full rounded-full h-2"
+            style={{ backgroundColor: "#FFFFFF1A" }}
+          >
             <div
               className={`h-2 rounded-full ${
                 task.status === "done"
@@ -58,9 +63,10 @@ export function TaskCard({ task }) {
               }}
             />
           </div>
+
+          {/* Footer with date, comments, views, avatars */}
           <div className="flex items-center justify-between">
             <span className="text-xs text-muted-foreground">{task.date}</span>
-            {/* border rounded bg-[#888DA71A] p-2 */}
             <div className="flex items-center space-x-2">
               {task.comments > 0 && (
                 <div className="flex items-center space-x-1">
@@ -78,7 +84,7 @@ export function TaskCard({ task }) {
                   </span>
                 </div>
               )}
-              <div className="flex -space-x-1">
+              {/* <div className="flex -space-x-1">
                 {task.assignees.map((assignee, index) => (
                   <Avatar key={index} className="w-6 h-6 border-2 border-card">
                     <AvatarFallback className="text-xs">
@@ -86,7 +92,30 @@ export function TaskCard({ task }) {
                     </AvatarFallback>
                   </Avatar>
                 ))}
-              </div>
+              </div> */}
+              {/* Only show avatars if task.assignees exists and is not empty */}
+              {task.assignees && task.assignees.length > 0 && (
+                <div className="flex -space-x-1">
+                  {task.assignees.map((assignee, index) => (
+                    <Avatar
+                      key={index}
+                      className="w-5 h-5 border-2 border-card"
+                    >
+                      {assignee.image ? (
+                        <img
+                          src={assignee.image}
+                          alt={assignee.name}
+                          className="w-full h-full rounded-full object-cover"
+                        />
+                      ) : (
+                        <AvatarFallback className="text-xs">
+                          {assignee.initials}
+                        </AvatarFallback>
+                      )}
+                    </Avatar>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>
